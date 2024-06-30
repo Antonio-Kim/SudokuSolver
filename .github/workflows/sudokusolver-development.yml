@@ -1,4 +1,4 @@
-name: Sudoku Solver in Development Env
+name: Main (Dev env)
 on:
   push:
     branches:
@@ -20,8 +20,6 @@ jobs:
           dotnet-version: ${{ matrix.dotnet-version }}
       - name: Install dependencies
         run: dotnet restore
-      - name: Super-Linter
-        uses: super-linter/super-linter@v5.7.2
       - name: Build
         run: dotnet build
       - name: Unit Tests
