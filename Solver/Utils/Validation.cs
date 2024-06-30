@@ -7,7 +7,7 @@ public static class Validation
 {
 	public static bool isValid(Grid grid)
 	{
-		if (grid == null) 
+		if (grid == null)
 			return false;
 
 		bool checkedRows = validRows(grid);
@@ -27,17 +27,17 @@ public static class Validation
 		return IsValidColumn;
 	}
 
-    public static bool validRows(Grid grid)
-    {
-        bool IsValidRows = false;
-        for (int i = 0; i < 9; i++)
-        {
-            validateRow(grid, i);
-        }
-        return IsValidRows;
-    }
+	public static bool validRows(Grid grid)
+	{
+		bool IsValidRows = false;
+		for (int i = 0; i < 9; i++)
+		{
+			validateRow(grid, i);
+		}
+		return IsValidRows;
+	}
 
-    public static bool validateColumn(Grid grid, int column)
+	public static bool validateColumn(Grid grid, int column)
 	{
 		if (grid?.table == null)
 			return false;
@@ -71,7 +71,6 @@ public static class Validation
 
 	public static bool validateSquares(Grid grid)
 	{
-		bool squareIsValid = true;
 		for (int i = 0; i < 9; i += 3)
 		{
 			for (int j = 0; j < 9; j += 3)
