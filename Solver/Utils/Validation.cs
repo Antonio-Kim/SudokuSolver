@@ -1,7 +1,6 @@
-using System.Windows.Markup;
-using Solver.Models;
+using SudokuSolver.Solver.Models;
 
-namespace Solver.Utils;
+namespace SudokuSolver.Solver.Utils;
 
 public static class Validation
 {
@@ -85,23 +84,57 @@ public static class Validation
 		return true;
 	}
 
-	private static bool checkOneSquare(Grid grid, int row, int col)
+	public static bool checkOneSquare(Grid grid, int row, int col)
 	{
 		if (grid.table == null) return false;
 
 		HashSet<int> square = new HashSet<int>();
 
-		for (int i = row; i < row + 3; i++)
-		{
-			for (int j = col; j < col + 3; j++)
-			{
+		int baseRow = (row / 3) * 3;
+		int baseCol = (col / 3) * 3;
 
+		for (int i = baseRow; i < baseRow + 3; i++)
+		{
+			for (int j = baseCol; j < baseCol + 3; j++)
+			{
 				int? cell = grid.table[i][j];
-				if (cell == null || !square.Add(cell.Value))
+				if (grid.table[i][j] == null || !square.Add(cell.Value))
 					return false;
 			}
 		}
 
 		return square.Count == 9;
+	}
+
+	public static bool validInput(Grid grid, int row, int col, int num)
+	{
+		if (grid.table == null) return false;
+		if (num < 1 || num > 9) return false;
+
+		for (int i = 0; i < Grid.row; i++)
+		{
+			if (grid.table[i][col] == num)
+				return false;
+		}
+
+		for (int j = 0; j < Grid.column; j++)
+		{
+			if (grid.table[row][j] == num)
+				return false;
+		}
+
+		int baseRow = (row / 3) * 3;
+		int baseCol = (col / 3) * 3;
+
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				if (grid.table[baseRow + i][baseCol + j] == num)
+					return false;
+			}
+		}
+
+		return true;
 	}
 }

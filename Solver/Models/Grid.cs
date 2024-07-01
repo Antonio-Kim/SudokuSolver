@@ -1,4 +1,4 @@
-namespace Solver.Models;
+namespace SudokuSolver.Solver.Models;
 
 public class Grid
 {
