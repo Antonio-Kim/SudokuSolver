@@ -3,10 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SudokuSolverApp.Views.Sudoku"
              Title="Sudoku">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="VerticalOptions" Value="FillAndExpand" />
+            <Setter Property="Margin" Value="0.5" />
+            <Setter Property="FontSize" Value="Large" />
+        </Style>
+    </ContentPage.Resources>
+
     <VerticalStackLayout>
-        <Label 
-            Text="Hello, world!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Grid x:Name="MainGrid"
+              RowDefinitions="*,*,*,*,*,*,*,*,*"
+              ColumnDefinitions="*,*,*,*,*,*,*,*,*">
+        </Grid>
+        <Button Text="Solve" />
     </VerticalStackLayout>
 </ContentPage>

@@ -29,7 +29,7 @@ public static class Algorithms
 			}
 		}
 
-		if (grid.table[row][col] != null)
+		if (grid.table[row][col] != 0)
 		{
 			return solve(grid, row, col + 1);
 		}
@@ -41,7 +41,7 @@ public static class Algorithms
 				grid.table[row][col] = num;
 				if (solve(grid, row, col + 1))
 					return true;
-				grid.table[row][col] = null;
+				grid.table[row][col] = 0;
 			}
 		}
 

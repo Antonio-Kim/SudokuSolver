@@ -27,15 +27,15 @@ public class AlgorithmsTest
         {
             table = new int?[][]
             {
-                new int?[] {null,6,null,3,null,null,null,5,8},
-                new int?[] {null,4,3,6,8,null,null,1,null},
-                new int?[] {null,null,null,9,1,7,3,6,null},
-                new int?[] {null,9,4,null,7,3,null,null,1},
-                new int?[] {3,null,6,null,null,8,4,null,null},
-                new int?[] {2,null,8,null,6,null,5,null, null },
-                new int?[] {1,null,null,8,null,null,7,null,9},
-                new int?[] {6,null,null,null,3,null,1,null,5},
-                new int?[] {null,2,9,7,null,null,null,null,null}
+                new int?[] {0,6,0,3,0,0,0,5,8},
+                new int?[] {0,4,3,6,8,0,0,1,0},
+                new int?[] {0,0,0,9,1,7,3,6,0},
+                new int?[] {0,9,4,0,7,3,0,0,1},
+                new int?[] {3,0,6,0,0,8,4,0,0},
+                new int?[] {2,0,8,0,6,0,5,0,0},
+                new int?[] {1,0,0,8,0,0,7,0,9},
+                new int?[] {6,0,0,0,3,0,1,0,5},
+                new int?[] {0,2,9,7,0,0,0,0,0}
             },
         };
 
