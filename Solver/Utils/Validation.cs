@@ -46,7 +46,7 @@ public static class Validation
 		for (int i = 0; i < 9; i++)
 		{
 			int? cell = grid.table[i][column];
-			if (cell == null || !values.Add(cell.Value))
+			if (cell == 0 || !values.Add(cell.Value))
 				return false;
 		}
 
@@ -61,7 +61,7 @@ public static class Validation
 		for (int j = 0; j < 9; j++)
 		{
 			int? cell = grid.table[row][j];
-			if (cell == null || !values.Add(cell.Value))
+			if (cell == 0 || !values.Add(cell.Value))
 				return false;
 		}
 
@@ -98,7 +98,7 @@ public static class Validation
 			for (int j = baseCol; j < baseCol + 3; j++)
 			{
 				int? cell = grid.table[i][j];
-				if (grid.table[i][j] == null || !square.Add(cell.Value))
+				if (grid.table[i][j] == 0 || !square.Add(cell.Value))
 					return false;
 			}
 		}
